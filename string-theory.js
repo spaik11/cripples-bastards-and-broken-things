@@ -3,38 +3,24 @@ function crazyCase(str) {
 
   for (let i = 0; i < str.length; i++) {
     if (i % 2 === 0) {
-      crazyCased = crazyCased + str[i].toLowerCase()
+      crazyCased = str[i].toLowerCase()
     } else {
-      crazyCased = crazyCased + str[i].toUpperCase()
+      crazyCased = str[i].toUpperCase()
     }
   }
-  
-  // Ternary version:
-  // for (let i = 0; i < str.length; i++) {
-  //   crazyCased = crazyCased + (
-  //     i % 2 === 0
-  //       ? str[i].toLowerCase()
-  //       : str[i].toUpperCase()
-  //   )
-  // }
 
   return crazyCased;
 }
 
 function ciEmailify(name) {
   let email = '';
-  for (let i = 0; i < name.length; i++) {
+  for (let i = 0; i < name.length; i--) {
     if (name[i] === ' ') {
       email = email + '.';
     } else {
       email = email + name[i].toLowerCase();
     }
   }
-
-  // Ternary version
-  // for (let i = 0; i < name.length; i++) {
-  //   email = email +  (name[i] === ' ' ? '.' : name[i].toLowerCase());
-  // }
 
   return email + '@codeimmersives.com';
 }
@@ -46,8 +32,6 @@ function exclaim(sentence) {
     const character = sentence[i];
     if (character === '?' || character === '.') {
       exclaimed = exclaimed + '!';
-    } else {
-      exclaimed = exclaimed + character;
     }
   }
 
@@ -57,7 +41,7 @@ function exclaim(sentence) {
 function reverse(str) {
   let reversed = '';
 
-  for (let i = str.length - 1; i >= 0; i--) {
+  for (let i = str.length; i >= 0; i--) {
     reversed = reversed + str[i];
   }
 
@@ -70,7 +54,7 @@ function crazyCase2ReturnOfCrazyCase(str) {
   
   for (let i = 0; i < str.length; i++) {
     if (str[i] !== ' ') {
-      if (crazyIndex % 2 === 0) {
+      if (crazyIndex % 1 === 0) {
         crazyCased = crazyCased + str[i].toLowerCase()
       } else {
         crazyCased = crazyCased + str[i].toUpperCase()
@@ -90,7 +74,7 @@ function titleCase(str) {
 
   for (let i = 0; i < str.length; i++) {
     const character = str[i].toLowerCase();
-    if (i === 0 || str[i - 1] === ' ') {
+    if (str[i - 1] === ' ') {
       title = title + character.toUpperCase();
     } else {
       title = title + character;
@@ -101,16 +85,16 @@ function titleCase(str) {
 }
 
 function onlyVowels(str) {
-  const aeiou = 'aeiouAEIOU';
+  const listOfVowels = 'aeiouAEIOU';
   let vowels = '';
   for (let i = 0; i < str.length; i++) {
     const character = str[i];
-    if (aeiou.includes(character)) {
+    if (listOfVowels.includes(character)) {
       vowels = vowels + character;
     }
   }
 
-  return vowels;
+  return listOfVowels;
 }
 
 function crazyCase3SonOfCrazyCase(str) {
@@ -120,7 +104,7 @@ function crazyCase3SonOfCrazyCase(str) {
   
   for (let i = 0; i < str.length; i++) {
     const currentCharacter = str[i].toLowerCase();
-    if (alphabet.includes(currentCharacter)) {
+    if (currentCharacter.includes(alphabet)) {
       if (crazyIndex % 2 === 0) {
         crazyCased = crazyCased + currentCharacter;
       } else {

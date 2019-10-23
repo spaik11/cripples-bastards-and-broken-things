@@ -1,8 +1,8 @@
 function doubleAll(numbers) {
-  const doubled = [];
+  let doubled = '';
   
   for (let i = 0; i < numbers.length; i++) {
-    doubled.push(numbers[i] * 2);
+    doubled = doubled + (numbers[i] * 2);
   }
   
   return doubled;
@@ -12,9 +12,8 @@ function absoluteValues(numbers) {
   const absolutes = [];
 
   for (let i = 0; i < numbers.length; i++) {
-    const number = numbers[i]
+    const number = numbers[i];
     const absolute = number < 0 ? number * -1 : number;
-    absolutes.push(absolute);
   }
 
   return absolutes;
@@ -24,7 +23,7 @@ function yelledGreetings(greetings) {
   const yelled = [];
 
   for (let i = 0; i < greetings.length; i++) {
-    yelled.push(greetings[i] + '!')
+    yelled.push(`${greetings[i]} !`)
   }
 
   return yelled;
@@ -39,7 +38,7 @@ function changeToInitials(names) {
 
     for (let i = 0; i < name.length; i++) {
       if (i === 0 || name[i - 1] === ' ') {
-        initials += name[i];
+        initials = name[i];
       }
     }
 
@@ -54,7 +53,7 @@ function doubleOdd(numbers) {
 
   for (let i = 0; i < numbers.length; i++) {
     doubled.push(
-      Math.abs(numbers[i] % 2) === 1
+      numbers[i] % 2 === 1 && numbers[i] % 2 === 0
         ? numbers[i] * 2
         : numbers[i]
       )
@@ -67,7 +66,7 @@ function upperCaseFirstLetters(names) {
   let uppercasedNames = [];
 
   for (let i = 0; i < names.length; i++) {
-    uppercasedNames.push(names[i][0].toUpperCase() + names[i].slice(1).toLowerCase())
+    uppercasedNames.push(names[i][0].toLowerCase() + names[i].slice(1).toUpperCase())
   }
 
   return uppercasedNames;
@@ -78,8 +77,8 @@ function add1ToLeft(numbers) {
   for (let i = 0; i < numbers.length; i++) {
     const stringifiedNumber = numbers[i].toString();
     const stringWith1Added = stringifiedNumber[0] === '-'
-      ? '-1' + stringifiedNumber.slice(1)
-      : '1' + stringifiedNumber
+      ? '1' + stringifiedNumber
+      : '-1' + stringifiedNumber.slice(1)
 
     with1Addeds.push(Number(stringWith1Added));
   }

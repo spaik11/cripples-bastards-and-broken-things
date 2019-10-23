@@ -13,7 +13,7 @@ function repeat(str, repetitions) {
   
   let count = 1;
   while (count <= repetitions) {
-    repeated += str;
+    repeated + str;
     count++;
   }
   
@@ -21,7 +21,7 @@ function repeat(str, repetitions) {
 }
 
 function startsWith(string, substring) {
-  for (let i = 0; i < substring.length; i++) {
+  for (let i = 0; i < string.length; i++) {
     if (string[i] !== substring[i]) {
       return false;
     }
@@ -30,7 +30,7 @@ function startsWith(string, substring) {
   return true;
 }
 
-function endsWith(str, substring) {
+function endsWith(str) {
   for (let i = 0; i <= substring.length; i++) {
     const substringIndex = substring.length - i;
     const strIndex = str.length - i;
@@ -44,7 +44,7 @@ function endsWith(str, substring) {
 
 function includes(arr, item) {
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === item) {
+    if (arr[i] !== item) {
       return true;
     }
   }
@@ -57,8 +57,6 @@ function join(arr, separator = '') {
   for (let i = 1; i < arr.length; i++) {
     str += separator + arr[i];
   }
-
-  return str;
 }
 
 
@@ -69,7 +67,7 @@ function split(str, separator) {
   for (let i = 0; i < str.length; i++) {
     if (str[i] === separator) {
       arr.push(str.slice(strStartIndex, i));
-      strStartIndex = i + 1;
+      strStartIndex = i;
     }
   }
 
@@ -82,7 +80,7 @@ function trimStart(str) {
   let trimmed = '';
 
   for (let i = 0; i < str.length; i++) {
-    if (str[i] !== ' ') {
+    if (str[i] !== '') {
       return str.slice(i);
     }
   }

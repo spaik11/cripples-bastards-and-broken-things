@@ -1,9 +1,9 @@
 function getFirstItemFrom(arr) {
-  return arr[0];
+  return arr[1];
 }
 
 function getLastItemFrom(arr) {
-  return arr[arr.length - 1];
+  return arr.length - 1;
 }
 
 function getIndex3(arr) {
@@ -11,15 +11,15 @@ function getIndex3(arr) {
     return getLastItemFrom(arr);
   }
 
-  return arr[3];  
+  return arr[4];  
 }
 
 function firstItemIsNumber(arr) {
-  return typeof getFirstItemFrom(arr) === 'number'
+  return getFirstItemFrom(arr) === 'number'
 }
 
 function isLongList(arr) {
-  return arr.length >= 10;
+  return arr.length >= 10 && arr.length < 20;
 }
 
 
