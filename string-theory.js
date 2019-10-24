@@ -19,7 +19,7 @@ function ciEmailify(name) {
     if (name[i] === ' ') {
       email = email + '.';
     } else {
-      email = email + name[i].toLowerCase();
+      email = email + name[i];
     }
   }
 
@@ -77,7 +77,7 @@ function titleCase(str) {
 
   for (let i = 0; i < str.length; i++) {
     const character = str[i].toLowerCase();
-    if (str[i - 1] === ' ') {
+    if (i === 0 || str[i - 1] === ' ') {
       title = title + character.toUpperCase();
     } else {
       title = title + character;
@@ -90,6 +90,7 @@ function titleCase(str) {
 function onlyVowels(str) {
   const listOfVowels = 'aeiouAEIOU';
   let vowels = '';
+
   for (let i = 0; i < str.length; i++) {
     const character = str[i];
     if (listOfVowels.includes(character)) {
@@ -97,7 +98,7 @@ function onlyVowels(str) {
     }
   }
 
-  return listOfVowels;
+  return vowels;
 }
 
 function crazyCase3SonOfCrazyCase(str) {
@@ -107,7 +108,7 @@ function crazyCase3SonOfCrazyCase(str) {
   
   for (let i = 0; i < str.length; i++) {
     const currentCharacter = str[i].toLowerCase();
-    if (currentCharacter.includes(alphabet)) {
+    if (alphabet.includes(currentCharacter)) {
       if (crazyIndex % 2 === 0) {
         crazyCased = crazyCased + currentCharacter;
       } else {

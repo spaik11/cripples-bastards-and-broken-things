@@ -14,7 +14,7 @@ function getIndex3(arr) {
 }
 
 function firstItemIsNumber(arr) {
-  return getFirstItemFrom(arr) === Number;
+  return typeof getFirstItemFrom(arr) === 'number';
 }
 
 function isLongList(arr) {
