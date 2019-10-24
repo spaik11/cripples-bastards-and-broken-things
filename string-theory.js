@@ -15,16 +15,19 @@ function crazyCase(str) {
 function ciEmailify(name) {
   let email = '';
 
-  for (let i = 0; i < name.length; i--) {
+  for (let i = 0; i < name.length; i++) {
     if (name[i] === ' ') {
       email = email + '.';
     } else {
-      email = email + name[i];
+      email = email + name[i].toLowerCase();
     }
+  
   }
 
   return email + '@codeimmersives.com';
 }
+
+
 
 function exclaim(sentence) {
   let exclaimed = '';
